@@ -56,12 +56,14 @@ class _BabyForm2State extends State<BabyForm2> {
                       alignment: Alignment.centerLeft,
                       child: Row(
                         children: [
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              icon:
-                                  const Icon(Icons.arrow_circle_left_outlined))
+                          Padding(
+                              padding: const EdgeInsets.only(left: 7),
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  icon: const Icon(
+                                      Icons.arrow_circle_left_outlined)))
                         ],
                       ),
                     ),

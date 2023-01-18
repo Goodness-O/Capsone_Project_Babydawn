@@ -1,3 +1,4 @@
+import 'package:capsone_project_babydawn/screens/widgets/aboutwidget.dart';
 import 'package:capsone_project_babydawn/screens/widgets/accountwidget.dart';
 import 'package:capsone_project_babydawn/screens/widgets/babyformwidet/babyform1.dart';
 import 'package:capsone_project_babydawn/screens/widgets/homewidget.dart';
@@ -19,7 +20,8 @@ class _HomePageState extends State<HomePage> {
     HomeWidget(),
     SearchWidget(),
     BabyForm1(),
-    AccountWiget()
+    AccountWidget(),
+    AboutWidget(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -31,21 +33,17 @@ class _HomePageState extends State<HomePage> {
           type: BottomNavigationBarType.fixed,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined, size: 20),
-              label: "Home",
-            ),
+                icon: Icon(Icons.home_outlined, size: 20), label: "Home"),
             BottomNavigationBarItem(
-              icon: Icon(Icons.search_outlined, size: 20),
-              label: "Search",
-            ),
+                icon: Icon(Icons.search_outlined, size: 20), label: "Search"),
             BottomNavigationBarItem(
-              icon: Icon(Icons.source_outlined, size: 20),
-              label: "Baby Form",
-            ),
+                icon: Icon(Icons.source_outlined, size: 20),
+                label: "Baby Form"),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline, size: 20),
-              label: "Account",
-            ),
+                icon: Icon(Icons.person_outline, size: 20), label: "Account"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.developer_board_outlined, size: 20),
+                label: "About"),
           ],
           onTap: (value) {
             setState(() {

@@ -8,14 +8,14 @@ import 'package:capsone_project_babydawn/screens/login/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class AccountWiget extends StatefulWidget {
-  const AccountWiget({super.key});
+class AccountWidget extends StatefulWidget {
+  const AccountWidget({super.key});
 
   @override
-  State<AccountWiget> createState() => _AccountWigetState();
+  State<AccountWidget> createState() => _AccountWidgetState();
 }
 
-class _AccountWigetState extends State<AccountWiget> {
+class _AccountWidgetState extends State<AccountWidget> {
   XFile? image;
 
   final ImagePicker picker = ImagePicker();

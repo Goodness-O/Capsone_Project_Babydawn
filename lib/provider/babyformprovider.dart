@@ -2,99 +2,32 @@ import 'package:capsone_project_babydawn/model/babyformmodel.dart';
 import 'package:flutter/material.dart';
 
 class BabyFormProvider with ChangeNotifier {
-  final List babyformList = [
-    BabyFormModel(
-      hospitalname: 'Federal Medical Centre,Asaba',
-      deliverydoctor: 'Dr. Jeremiah Uche',
-      fathername: 'Mr. Adetola Micheal',
-      mothername: 'Mrs. Adetola Angel',
-      address: 'Mary Babagida Way, Asaba',
-      idnumber: 'DSHA 0123',
-      date: '27th Aug 2020',
-      time: '12:30am',
-      gender: 'Male',
-      weight: '28Kg',
-      height: '45cm',
-      headsize: '9cm',
-      bloodgroup: 'B',
-      genotype: 'SS',
-    ),
-    BabyFormModel(
-      hospitalname: 'Delta State University Teaching Hospital',
-      deliverydoctor: 'Dr. Chuks Ozana',
-      fathername: 'Mr. Oghenovo Matthew',
-      mothername: 'Mrs. Oghenovo Tina',
-      address: 'jesus saves road, Asaba',
-      idnumber: 'DSHA 0101',
-      date: '1st Jan 2002',
-      time: '3:30am',
-      gender: 'Male',
-      weight: '55Kg',
-      height: '50cm',
-      headsize: '12cm',
-      bloodgroup: 'AB',
-      genotype: 'AS',
-    ),
-    BabyFormModel(
-      hospitalname: "St Joseph's Hospital, Asaba",
-      deliverydoctor: 'Dr. Precious Godwill',
-      fathername: 'Mr. Dennis oghenero',
-      mothername: 'Mrs. Dennis Maureen',
-      address: 'DLA road, Asaba',
-      idnumber: 'DSHA 0023',
-      date: '12th Oct 2021',
-      time: '5:30am',
-      gender: 'Female',
-      weight: '40Kg',
-      height: '35cm',
-      headsize: '13cm',
-      bloodgroup: 'A',
-      genotype: 'AC',
-    ),
-    BabyFormModel(
-      hospitalname: 'Delta State Hospital,Asaba',
-      deliverydoctor: 'Dr. Jeremiah Uche',
-      fathername: 'Mr. Patrick Dennis',
-      mothername: 'Mrs. Patrick Cynthia',
-      address: 'iHUB, DBS junction, Asaba',
-      idnumber: 'DSHA 0001',
-      date: '16th Dec 2022',
-      time: '5:30pm',
-      gender: 'Female',
-      weight: '35Kg',
-      height: '45cm',
-      headsize: '10cm',
-      bloodgroup: 'O+',
-      genotype: 'AA',
-    ),
-  ];
+  final List babyformList = [];
 
   List get _babyformList => babyformList;
 
-  void addBabyForm(
-    String hospitalname,
-    String deliverydoctor,
-    String fathername,
-    String mothername,
-    String address,
-    String idnumber,
-    String date,
-    String time,
-    String gender,
-    String weight,
-    String height,
-    String headsize,
-    String bloodgroup,
-    String genotype,
-  ) {
-    babyformList.add(BabyFormModel(
-      hospitalname: hospitalname,
-      deliverydoctor: deliverydoctor,
-      fathername: fathername,
-      mothername: mothername,
-      address: address,
-      idnumber: idnumber,
-      date: date,
+  void addBabyForm1(
+      String hospitalname,
+      String deliverydoctor,
+      String fathername,
+      String mothername,
+      String address,
+      String idnumber,
+      String date) {
+    babyformList.add(BabyFormModel1(
+        hospitalname: hospitalname,
+        deliverydoctor: deliverydoctor,
+        fathername: fathername,
+        mothername: mothername,
+        address: address,
+        idnumber: idnumber,
+        date: date));
+    notifyListeners();
+  }
+
+  void addBabyForm2(String time, String gender, String weight, String height,
+      String headsize, String bloodgroup, String genotype) {
+    babyformList.add(BabyFormModel2(
       time: time,
       gender: gender,
       weight: weight,
