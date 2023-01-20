@@ -1,6 +1,7 @@
 import 'package:capsone_project_babydawn/reusablewidgets.dart/barge.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/buttons.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/colors.dart';
+import 'package:capsone_project_babydawn/screens/widgets/searchwidget/notfound.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatefulWidget {
@@ -124,7 +125,14 @@ class _SearchWidgetState extends State<SearchWidget> {
                   ),
                   const SizedBox(height: 20),
                   MyButton(
-                      buttonText: 'SEARCH', onPressed: (() {}), color: green)
+                      buttonText: 'SEARCH',
+                      onPressed: (() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const NotFound()));
+                      }),
+                      color: green)
                 ],
               ),
             ),

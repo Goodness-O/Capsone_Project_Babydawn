@@ -1,4 +1,3 @@
-import 'package:capsone_project_babydawn/screens/widgets/aboutwidget.dart';
 import 'package:capsone_project_babydawn/screens/widgets/accountwidget.dart';
 import 'package:capsone_project_babydawn/screens/widgets/babyformwidet/babyform1.dart';
 import 'package:capsone_project_babydawn/screens/widgets/homewidget.dart';
@@ -21,7 +20,6 @@ class _HomePageState extends State<HomePage> {
     SearchWidget(),
     BabyForm1(),
     AccountWidget(),
-    AboutWidget(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -40,10 +38,7 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.source_outlined, size: 20),
                 label: "Baby Form"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline, size: 20), label: "Account"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.developer_board_outlined, size: 20),
-                label: "About"),
+                icon: Icon(Icons.person_outline, size: 20), label: "Account")
           ],
           onTap: (value) {
             setState(() {

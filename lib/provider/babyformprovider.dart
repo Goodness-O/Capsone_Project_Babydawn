@@ -2,9 +2,13 @@ import 'package:capsone_project_babydawn/model/babyformmodel.dart';
 import 'package:flutter/material.dart';
 
 class BabyFormProvider with ChangeNotifier {
-  final List babyformList = [];
+  final List babyformList1 = [];
+  final List babyformList2 = [];
+ 
 
-  List get _babyformList => babyformList;
+  List get _babyformList1 => babyformList1;
+  List get _babyformList2 => babyformList2;
+
 
   void addBabyForm1(
       String hospitalname,
@@ -14,7 +18,7 @@ class BabyFormProvider with ChangeNotifier {
       String address,
       String idnumber,
       String date) {
-    babyformList.add(BabyFormModel1(
+    babyformList1.add(BabyFormModel1(
         hospitalname: hospitalname,
         deliverydoctor: deliverydoctor,
         fathername: fathername,
@@ -27,7 +31,7 @@ class BabyFormProvider with ChangeNotifier {
 
   void addBabyForm2(String time, String gender, String weight, String height,
       String headsize, String bloodgroup, String genotype) {
-    babyformList.add(BabyFormModel2(
+    babyformList2.add(BabyFormModel2(
       time: time,
       gender: gender,
       weight: weight,

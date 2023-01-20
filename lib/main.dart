@@ -1,7 +1,6 @@
 import 'package:capsone_project_babydawn/provider/babyformprovider.dart';
+import 'package:capsone_project_babydawn/provider/searchprovider.dart';
 import 'package:capsone_project_babydawn/screens/splashpage.dart';
-import 'package:capsone_project_babydawn/screens/widgets/babyformwidet/babyform1.dart';
-import 'package:capsone_project_babydawn/screens/widgets/babyformwidet/babyform2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,15 +15,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => BabyFormProvider())
+        ChangeNotifierProvider(create: (context) => BabyFormProvider()),
+        ChangeNotifierProvider(create: (context) => SearchProvider())
       ],
-      child: MaterialApp(
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const SplashPage(),
-          '/fillform1': (context) => const BabyForm1(),
-          '/fillform2': (context) => const BabyForm2(),
-        },
+      child: const MaterialApp(
+        home: SplashPage(),
         debugShowCheckedModeBanner: false,
       ),
     );

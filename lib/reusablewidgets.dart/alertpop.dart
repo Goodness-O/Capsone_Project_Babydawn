@@ -1,3 +1,4 @@
+import 'package:capsone_project_babydawn/reusablewidgets.dart/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -9,13 +10,14 @@ class AlertPop {
       title: text,
       buttons: [
         DialogButton(
+          color: green,
           radius: const BorderRadius.all(Radius.circular(20)),
           onPressed: () => Navigator.pop(context),
           width: 120,
           child: const Text(
-            "WELL DONE",
+            "CONTINUE",
             style: TextStyle(
-                color: Colors.black, fontSize: 16, fontFamily: "Roboto"),
+                color: Colors.black, fontSize: 14, fontFamily: "Roboto"),
           ),
         )
       ],

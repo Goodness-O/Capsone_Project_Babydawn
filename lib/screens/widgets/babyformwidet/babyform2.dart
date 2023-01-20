@@ -1,11 +1,15 @@
+import 'package:capsone_project_babydawn/provider/babyformprovider.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/Textformfield.dart';
+import 'package:capsone_project_babydawn/reusablewidgets.dart/alertpop.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/barge.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/buttons.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/colors.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/font.dart';
 import 'package:capsone_project_babydawn/reusablewidgets.dart/mediaquery.dart';
+import 'package:capsone_project_babydawn/screens/widgets/babyformwidet/viewrecord.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class BabyForm2 extends StatefulWidget {
   const BabyForm2({super.key});
@@ -28,6 +32,7 @@ class _BabyForm2State extends State<BabyForm2> {
     });
   }
 
+  final popup = AlertPop();
   final _formkey = GlobalKey<FormState>();
   final TextEditingController time = TextEditingController();
   final TextEditingController gender = TextEditingController();
@@ -39,6 +44,7 @@ class _BabyForm2State extends State<BabyForm2> {
 
   @override
   Widget build(BuildContext context) {
+    final babyformProvider = Provider.of<BabyFormProvider>(context);
     return Scaffold(
       backgroundColor: green,
       body: SingleChildScrollView(
@@ -234,10 +240,31 @@ class _BabyForm2State extends State<BabyForm2> {
                             SecondButton(
                               buttonText: 'SAVE',
                               color: green,
-                              onPressed: () {},
+                              onPressed: () {
+                                if (_formkey.currentState!.validate()) {
+                                  babyformProvider.addBabyForm2(
+                                      time.text,
+                                      gender.text,
+                                      weight.text,
+                                      height.text,
+                                      headsize.text,
+                                      bloodgroup.text,
+                                      genotype.text);
+                                  popup.alert(context, "SAVED");
+                                }
+                              },
                             ),
                             SecondButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                if (_formkey.currentState!.validate()) {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ViewRecords()));
+                                  clear();
+                                }
+                              },
                               buttonText: 'VIEW RECORD',
                               color: green,
                             ),
@@ -253,5 +280,15 @@ class _BabyForm2State extends State<BabyForm2> {
         ),
       ),
     );
+  }
+
+  void clear() {
+    time.clear();
+    gender.clear();
+    weight.clear();
+    height.clear();
+    headsize.clear();
+    bloodgroup.clear();
+    genotype.clear();
   }
 }

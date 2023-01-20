@@ -179,8 +179,7 @@ class _BabyForm1State extends State<BabyForm1> {
                                       address.text,
                                       idnumber.text,
                                       date.text);
-                                  popup.alert(context, "Saved");
-                                  clear();
+                                  popup.alert(context, "SAVED");
                                 }
                               },
                             ),
@@ -209,15 +208,5 @@ class _BabyForm1State extends State<BabyForm1> {
         ),
       ),
     );
-  }
-
-  void clear() {
-    hospitalname.clear();
-    deliverydoctor.clear();
-    fathername.clear();
-    mothername.clear();
-    address.clear();
-    idnumber.clear();
-    date.clear();
   }
 }
